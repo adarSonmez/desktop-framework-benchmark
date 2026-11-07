@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-*/
+build/
+target/
+bin/
+obj/
+.vs/
+*.user
+results/raw/
+.dart_tool/
+artifacts/
+release/
