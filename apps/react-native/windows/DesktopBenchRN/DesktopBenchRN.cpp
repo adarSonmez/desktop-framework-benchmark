@@ -82,7 +82,7 @@ _Use_decl_annotations_ int CALLBACK WinMain(HINSTANCE instance, HINSTANCE, PSTR 
 
   // Get the AppWindow so we can configure its initial title and size
   auto appWindow{reactNativeWin32App.AppWindow()};
-  appWindow.Title(L"DesktopBench – react-native");
+  appWindow.Title(L"DesktopBench \u2013 react-native");
   // Client area 1280x800 DIPs, centered (spec/APP_SPEC.md)
   try {
     const auto hwnd = winrt::Microsoft::UI::GetWindowFromWindowId(appWindow.Id());
