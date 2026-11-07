@@ -1,0 +1,19 @@
+{
+  "name": "desktopbench-tauri",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build:ui": "vite build",
+    "build": "tauri build",
+    "dev": "tauri build --debug"
+  },
+  "dependencies": { "@tauri-apps/api": "^2" },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.4",
+    "@vitejs/plugin-react": "*",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^8.3.6"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "DesktopBench Tauri",
+  "version": "1.0.0",
+  "identifier": "dev.desktopbench.tauri",
+  "build": {
+    "frontendDist": "../dist",
+    "beforeBuildCommand": "npm run build:ui"
+  },
+  "app": {
+    "windows": [
+      { "title": "DesktopBench – tauri", "width": 1280, "height": 800, "center": true, "resizable": true }
+    ],
+    "security": { "csp": null }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/icon.ico", "icons/icon.png"]
+  }
+}
