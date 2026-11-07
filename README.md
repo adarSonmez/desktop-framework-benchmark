@@ -19,6 +19,8 @@ Electron and Tauri run the **exact same** React bundle, so the gap between them 
 
 ## Results
 
+![Startup, idle memory, download size and CPU time for all six variants](docs/images/hero.png)
+
 > **Machine:** AMD Ryzen 7 7840HS (16 threads), 15 GB RAM, Radeon 780M + RTX 3050 Laptop, 144 Hz display, Windows 11 Pro (build 26300).
 > **Method:** 1 cold + 10 warm runs per variant, round-robin; values are **medians of warm runs**. All 60 warm runs passed validation.
 > Full data: [`results/latest/report.md`](results/latest/report.md) · [`summary.csv`](results/latest/summary.csv) · [`summary.json`](results/latest/summary.json)
@@ -53,6 +55,8 @@ MAUI and React Native are built **self-contained** (the .NET runtime and Windows
 
 ### Interaction (ms, median, lower is better)
 
+![Interaction steps heatmap](docs/images/interaction.png)
+
 | Variant | load | filter | sort | scroll | crud | save | cpuPrimes | cpuJson | ipc ×1000 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | electron | 77 | 74 | 73 | 865 | 195 | **10** | 243 | **54** | 145 |
@@ -72,6 +76,8 @@ MAUI and React Native are built **self-contained** (the .NET runtime and Windows
 - **Flutter** spends ~2.2 s before Dart `main()` even runs (engine and GPU initialization on this machine); from Dart `main()` to the first frame takes only ~130 ms. Its frame-bound steps are paced at 60 Hz, while the WebView variants ran at the display's 144 Hz.
 - **MAUI XAML** is fine for compute but slow at re-binding a 10k-item `CollectionView` (filter, sort and scroll each take seconds).
 - **MAUI Blazor** renders quickly through `<Virtualize>`, but bulk state churn (`crud`, 1,500 operations) is the slowest of all six.
+
+Charts are generated from `results/latest/summary.json` by [`docs/make_charts.py`](docs/make_charts.py).
 
 Treat these as one machine's numbers, not universal truths. Run the harness on your own hardware.
 
