@@ -1,0 +1,8 @@
+[
+  { "name": "electron",     "exe": "../desktopbench-out/electron/win-unpacked/DesktopBench Electron.exe", "dir": "../desktopbench-out/electron/win-unpacked", "installer": "../desktopbench-out/electron/DesktopBench Electron Setup 1.0.0.exe" },
+  { "name": "tauri",        "exe": "apps/tauri/src-tauri/target/release/desktopbench-tauri.exe", "files": ["apps/tauri/src-tauri/target/release/desktopbench-tauri.exe"], "installer": "apps/tauri/src-tauri/target/release/bundle/nsis/DesktopBench Tauri_1.0.0_x64-setup.exe" },
+  { "name": "flutter",      "exe": "apps/flutter/build/windows/x64/runner/Release/desktopbench_flutter.exe", "dir": "apps/flutter/build/windows/x64/runner/Release" },
+  { "name": "react-native", "exe": "apps/react-native/windows/x64/Release/DesktopBenchRN.exe", "dir": "apps/react-native/windows/x64/Release" },
+  { "name": "maui-xaml",    "exe": "artifacts/maui-xaml/DesktopBench.MauiXaml.exe", "dir": "artifacts/maui-xaml" },
+  { "name": "maui-blazor",  "exe": "artifacts/maui-blazor/DesktopBench.MauiBlazor.exe", "dir": "artifacts/maui-blazor" }
+]
