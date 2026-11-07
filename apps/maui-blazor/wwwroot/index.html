@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>DesktopBench</title>
+    <base href="/" />
+    <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        // JS side of the Blazor bridge: frame waiting, scrolling and the ping round-trip.
+        window.bench = {
+            waitFrames: () => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(() => r()))),
+            scrollTo: (el, f) => { el.scrollTop = Math.round((el.scrollHeight - el.clientHeight) * f); },
+            ping: (n) => n + 1,
+        };
+    </script>
+    <script src="_framework/blazor.webview.js"></script>
+</body>
+</html>

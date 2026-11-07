@@ -1,0 +1,167 @@
+@using System.Diagnostics
+@using System.Globalization
+@using DesktopBench.Core
+@using SortKey = DesktopBench.Core.SortKey
+@implements IBenchUi
+@inject IJSRuntime JS
+
+<div class="app">
+    <header class="topbar">
+        <span class="title">DesktopBench</span>
+        <input class="search" placeholder="Search name…" value="@_query" @oninput="e => { _query = e.Value?.ToString() ?? string.Empty; _dirty = true; }" />
+        <select class="sort" value="@_sort" @onchange="e => { _sort = Enum.Parse<SortKey>(e.Value!.ToString()!); _dirty = true; }">
+            @foreach (var (key, label) in Catalog.Sorts)
+            {
+                <option value="@key">@label</option>
+            }
+        </select>
+        <button class="btn primary" @onclick="OnNew">New</button>
+        <span class="stats">@Visible.Count / @_store.Items.Count items</span>
+    </header>
+    <main class="body">
+        <section class="list">
+            <div class="row head">
+                <span class="c-id">ID</span>
+                <span class="c-name">Name</span>
+                <span class="c-cat">Category</span>
+                <span class="c-price">Price</span>
+                <span class="c-stock">Stock</span>
+                <span class="c-date">Created</span>
+            </div>
+            <div class="viewport" @ref="_viewport">
+                <Virtualize Items="Visible" ItemSize="32" OverscanCount="6" Context="it">
+                    <div @key="it.Id" class="@(it.Id == _selectedId ? "row selected" : "row")" @onclick="() => Select(it)">
+                        <span class="c-id">@it.Id</span>
+                        <span class="c-name">@it.Name</span>
+                        <span class="c-cat">@it.Category</span>
+                        <span class="c-price">@it.PriceText</span>
+                        <span class="c-stock">@it.Stock</span>
+                        <span class="c-date">@it.CreatedAt</span>
+                    </div>
+                </Virtualize>
+            </div>
+        </section>
+        <aside class="detail">
+            @if (_draft is null)
+            {
+                <h2>No selection</h2>
+            }
+            else
+            {
+                <h2>Item #@_draft.Id</h2>
+                <label>Name <input @bind="_draft.Name" /></label>
+                <label>
+                    Category
+                    <select @bind="_draft.Category">
+                        @foreach (var c in Catalog.Categories)
+                        {
+                            <option>@c</option>
+                        }
+                    </select>
+                </label>
+                <label>Price <input type="number" step="0.01" @bind="_draft.Price" @bind:culture="CultureInfo.InvariantCulture" /></label>
+                <label>Stock <input type="number" step="1" @bind="_draft.Stock" /></label>
+                <label>Created <input value="@_draft.CreatedAt" readonly /></label>
+                <div class="actions">
+                    <button class="btn primary" @onclick="OnSave">Save</button>
+                    <button class="btn danger" @onclick="OnDelete">Delete</button>
+                </div>
+            }
+        </aside>
+    </main>
+    <footer class="statusbar">@_status</footer>
+</div>
+
+@code {
+    readonly ItemStore _store = new();
+    List<Item> _visible = [];
+    bool _dirty = true;
+    string _query = "";
+    SortKey _sort = SortKey.Id;
+    int? _selectedId;
+    Item? _draft;
+    string _status = "Loading…";
+    ElementReference _viewport;
+
+    List<Item> Visible
+    {
+        get
+        {
+            if (_dirty) { _visible = ItemStore.ComputeVisible(_store.Items, _query, _sort); _dirty = false; }
+            return _visible;
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        // Every store mutation marks the view dirty; Blazor coalesces StateHasChanged calls into one render.
+        _store.Changed += () => { _dirty = true; StateHasChanged(); };
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+        var sw = Stopwatch.StartNew();
+        var items = await DataIo.LoadAsync();
+        _store.SetAll(items ?? []);
+        await WaitFrames();
+        var loadMs = Math.Round(sw.Elapsed.TotalMilliseconds, 3);
+        var readyTs = BenchEnv.NowMs();
+        Status(items != null ? $"Loaded {items.Count} items in {Math.Round(loadMs)} ms" : "No data – run scripts/seed.ps1");
+
+        if (BenchEnv.BenchOut != null)
+            await BenchRunner.RunAsync(this, "maui-blazor", readyTs, loadMs);
+    }
+
+    void Select(Item? it)
+    {
+        _selectedId = it?.Id;
+        _draft = it is null ? null : it with { };
+    }
+
+    void OnNew()
+    {
+        var it = _store.Create();
+        Select(it);
+        _status = $"Created #{it.Id}";
+    }
+
+    async Task OnSave()
+    {
+        if (_draft is null) return;
+        _store.Update(_draft with { });
+        await DataIo.SaveAsync(_store.Items);
+        _status = "Saved";
+    }
+
+    async Task OnDelete()
+    {
+        if (_draft is null) return;
+        var id = _draft.Id;
+        _store.Remove(id);
+        Select(null);
+        await DataIo.SaveAsync(_store.Items);
+        _status = $"Deleted #{id}";
+    }
+
+    // ---- IBenchUi ----
+    public ItemStore Store => _store;
+    public int VisibleCount => Visible.Count;
+    public void SetQuery(string q) { _query = q; _dirty = true; StateHasChanged(); }
+    public void SetSort(SortKey s) { _sort = s; _dirty = true; StateHasChanged(); }
+    public void ScrollTo(double fraction) => _ = JS.InvokeVoidAsync("bench.scrollTo", _viewport, fraction);
+
+    public async Task WaitFrames()
+    {
+        // Let the queued render batch go out to the WebView first, then wait two animation frames there.
+        await Task.Yield();
+        await JS.InvokeVoidAsync("bench.waitFrames");
+    }
+
+    public void Status(string msg) { _status = msg; StateHasChanged(); }
+
+    // Real bridge crossing: .NET → WebView2 JS → .NET.
+    public async Task<int> Ping(int n) => await JS.InvokeAsync<int>("bench.ping", n);
+
+    public void Exit() => Application.Current!.Quit();
+}
