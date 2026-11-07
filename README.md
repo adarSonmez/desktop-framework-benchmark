@@ -128,3 +128,7 @@ Close other apps and keep the laptop on AC power while benchmarking.
 1. Implement [`spec/APP_SPEC.md`](spec/APP_SPEC.md) and [`spec/BENCH_PROTOCOL.md`](spec/BENCH_PROTOCOL.md) under `apps/<name>/`, and document any deviations in `NOTES.md`.
 2. Add the build to [`scripts/build-all.ps1`](scripts/build-all.ps1) and the exe/output folder to [`bench/variants.json`](bench/variants.json).
 3. Check one run with `scripts/run-once.ps1`, then run the full benchmark.
+
+## License
+
+[MIT](LICENSE)
