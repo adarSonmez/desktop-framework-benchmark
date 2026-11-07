@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:core="clr-namespace:DesktopBench.Core;assembly=DesktopBench.Core"
+             x:Class="DesktopBench.MauiXaml.MainPage"
+             BackgroundColor="{StaticResource Bg}">
+
+  <Grid RowDefinitions="56,1,*,1,28">
+
+    <!-- Top bar -->
+    <Grid Grid.Row="0" BackgroundColor="{StaticResource Surface}" Padding="16,0" ColumnSpacing="12"
+          ColumnDefinitions="Auto,280,Auto,Auto,*">
+      <Label Text="DesktopBench" FontSize="16" FontAttributes="Bold" Margin="0,0,8,0" />
+      <Entry x:Name="SearchEntry" Grid.Column="1" Placeholder="Search name…" VerticalOptions="Center" TextChanged="OnSearchChanged" />
+      <Picker x:Name="SortPicker" Grid.Column="2" WidthRequest="110" VerticalOptions="Center" SelectedIndexChanged="OnSortChanged" />
+      <Button Grid.Column="3" Text="New" VerticalOptions="Center" Clicked="OnNew" />
+      <Label x:Name="StatsLabel" Grid.Column="4" HorizontalOptions="End" TextColor="{StaticResource Muted}" />
+    </Grid>
+    <BoxView Grid.Row="1" Color="{StaticResource Border}" />
+
+    <!-- Body -->
+    <Grid Grid.Row="2" ColumnDefinitions="*,1,360">
+      <Grid RowDefinitions="32,1,*" BackgroundColor="{StaticResource Surface}">
+        <Grid Padding="12,0" ColumnDefinitions="70,*,130,100,80,110">
+          <Label Text="ID" FontAttributes="Bold" TextColor="{StaticResource Muted}" />
+          <Label Grid.Column="1" Text="Name" FontAttributes="Bold" TextColor="{StaticResource Muted}" />
+          <Label Grid.Column="2" Text="Category" FontAttributes="Bold" TextColor="{StaticResource Muted}" />
+          <Label Grid.Column="3" Text="Price" FontAttributes="Bold" TextColor="{StaticResource Muted}" HorizontalTextAlignment="End" />
+          <Label Grid.Column="4" Text="Stock" FontAttributes="Bold" TextColor="{StaticResource Muted}" HorizontalTextAlignment="End" />
+          <Label Grid.Column="5" Text="Created" FontAttributes="Bold" TextColor="{StaticResource Muted}" Margin="16,0,0,0" />
+        </Grid>
+        <BoxView Grid.Row="1" Color="{StaticResource Border}" />
+        <CollectionView x:Name="List" Grid.Row="2" SelectionMode="Single" ItemSizingStrategy="MeasureFirstItem"
+                        SelectionChanged="OnSelectionChanged">
+          <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="core:Item">
+              <Grid HeightRequest="32" RowDefinitions="31,1">
+                <VisualStateManager.VisualStateGroups>
+                  <VisualStateGroup Name="CommonStates">
+                    <VisualState Name="Normal">
+                      <VisualState.Setters>
+                        <Setter Property="BackgroundColor" Value="{StaticResource Surface}" />
+                      </VisualState.Setters>
+                    </VisualState>
+                    <VisualState Name="Selected">
+                      <VisualState.Setters>
+                        <Setter Property="BackgroundColor" Value="{StaticResource Selected}" />
+                      </VisualState.Setters>
+                    </VisualState>
+                  </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Grid Padding="12,0" ColumnDefinitions="70,*,130,100,80,110">
+                  <Label Text="{Binding Id}" />
+                  <Label Grid.Column="1" Text="{Binding Name}" />
+                  <Label Grid.Column="2" Text="{Binding Category}" />
+                  <Label Grid.Column="3" Text="{Binding PriceText}" HorizontalTextAlignment="End" />
+                  <Label Grid.Column="4" Text="{Binding Stock}" HorizontalTextAlignment="End" />
+                  <Label Grid.Column="5" Text="{Binding CreatedAt}" Margin="16,0,0,0" />
+                </Grid>
+                <BoxView Grid.Row="1" Color="{StaticResource Border}" />
+              </Grid>
+            </DataTemplate>
+          </CollectionView.ItemTemplate>
+        </CollectionView>
+      </Grid>
+
+      <BoxView Grid.Column="1" Color="{StaticResource Border}" />
+
+      <!-- Detail panel -->
+      <VerticalStackLayout Grid.Column="2" BackgroundColor="{StaticResource Surface}" Padding="16" Spacing="12">
+        <Label x:Name="DetailTitle" Text="No selection" FontSize="16" FontAttributes="Bold" />
+        <VerticalStackLayout x:Name="Form" Spacing="12" IsVisible="False">
+          <VerticalStackLayout Spacing="4">
+            <Label Text="Name" TextColor="{StaticResource Muted}" />
+            <Entry x:Name="NameEntry" />
+          </VerticalStackLayout>
+          <VerticalStackLayout Spacing="4">
+            <Label Text="Category" TextColor="{StaticResource Muted}" />
+            <Picker x:Name="CategoryPicker" />
+          </VerticalStackLayout>
+          <VerticalStackLayout Spacing="4">
+            <Label Text="Price" TextColor="{StaticResource Muted}" />
+            <Entry x:Name="PriceEntry" Keyboard="Numeric" />
+          </VerticalStackLayout>
+          <VerticalStackLayout Spacing="4">
+            <Label Text="Stock" TextColor="{StaticResource Muted}" />
+            <Entry x:Name="StockEntry" Keyboard="Numeric" />
+          </VerticalStackLayout>
+          <VerticalStackLayout Spacing="4">
+            <Label Text="Created" TextColor="{StaticResource Muted}" />
+            <Entry x:Name="CreatedEntry" IsReadOnly="True" />
+          </VerticalStackLayout>
+          <HorizontalStackLayout Spacing="8">
+            <Button Text="Save" Clicked="OnSave" />
+            <Button Text="Delete" BackgroundColor="{StaticResource Danger}" Clicked="OnDelete" />
+          </HorizontalStackLayout>
+        </VerticalStackLayout>
+      </VerticalStackLayout>
+    </Grid>
+
+    <!-- Status bar -->
+    <BoxView Grid.Row="3" Color="{StaticResource Border}" />
+    <Label x:Name="StatusLabel" Grid.Row="4" Padding="16,0" FontSize="12" TextColor="{StaticResource Muted}"
+           BackgroundColor="{StaticResource Surface}" />
+  </Grid>
+</ContentPage>

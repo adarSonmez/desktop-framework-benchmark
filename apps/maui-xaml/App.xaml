@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DesktopBench.MauiXaml.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <Color x:Key="Bg">#F6F7F9</Color>
+      <Color x:Key="Surface">#FFFFFF</Color>
+      <Color x:Key="Border">#E3E6EA</Color>
+      <Color x:Key="Text">#1F2937</Color>
+      <Color x:Key="Muted">#6B7280</Color>
+      <Color x:Key="Accent">#2563EB</Color>
+      <Color x:Key="Selected">#DBEAFE</Color>
+      <Color x:Key="Danger">#DC2626</Color>
+
+      <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource Text}" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="LineBreakMode" Value="TailTruncation" />
+      </Style>
+      <Style TargetType="Entry">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="TextColor" Value="{StaticResource Text}" />
+      </Style>
+      <Style TargetType="Picker">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="TextColor" Value="{StaticResource Text}" />
+      </Style>
+      <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="Padding" Value="16,0" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Accent}" />
+      </Style>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
