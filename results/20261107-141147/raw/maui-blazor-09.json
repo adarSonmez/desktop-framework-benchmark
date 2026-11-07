@@ -1,0 +1,25 @@
+{
+  "variant": "maui-blazor",
+  "run": 9,
+  "valid": true,
+  "error": null,
+  "startupMs": 1442,
+  "windowMs": 924.6073,
+  "idleWorkingSetMb": 588.0755208333334,
+  "idlePrivateMb": 343.6145833333333,
+  "peakWorkingSetMb": 766.6640625,
+  "peakPrivateMb": 514.6953125,
+  "cpuMs": 11953.125,
+  "processCount": 7,
+  "steps": {
+    "load": 77.038,
+    "filter": 124.403,
+    "sort": 151.495,
+    "scroll": 1112.404,
+    "crud": 2908.86,
+    "save": 25.49,
+    "cpuPrimes": 231.296,
+    "cpuJson": 314.085,
+    "ipc": 313.979
+  }
+}

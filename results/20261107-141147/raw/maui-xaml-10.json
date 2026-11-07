@@ -1,0 +1,25 @@
+{
+  "variant": "maui-xaml",
+  "run": 10,
+  "valid": true,
+  "error": null,
+  "startupMs": 1639,
+  "windowMs": 1015.7346,
+  "idleWorkingSetMb": 267.14728860294116,
+  "idlePrivateMb": 210.69439338235293,
+  "peakWorkingSetMb": 359.72265625,
+  "peakPrivateMb": 313.1640625,
+  "cpuMs": 20406.25,
+  "processCount": 1,
+  "steps": {
+    "load": 476.411,
+    "filter": 1455.995,
+    "sort": 1123.03,
+    "scroll": 4765.307,
+    "crud": 931.846,
+    "save": 60.731,
+    "cpuPrimes": 224.488,
+    "cpuJson": 431.773,
+    "ipc": 0.82
+  }
+}

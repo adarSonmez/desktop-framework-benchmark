@@ -1,0 +1,25 @@
+{
+  "variant": "react-native",
+  "run": 7,
+  "valid": true,
+  "error": null,
+  "startupMs": 559,
+  "windowMs": 218.3494,
+  "idleWorkingSetMb": 142.7265625,
+  "idlePrivateMb": 133.34765625,
+  "peakWorkingSetMb": 208.7109375,
+  "peakPrivateMb": 201.9765625,
+  "cpuMs": 5750,
+  "processCount": 1,
+  "steps": {
+    "load": 138.425,
+    "filter": 673.185,
+    "sort": 723.519,
+    "scroll": 7.891,
+    "crud": 1187.384,
+    "save": 25.49,
+    "cpuPrimes": 1519.675,
+    "cpuJson": 172.578,
+    "ipc": 14.768
+  }
+}

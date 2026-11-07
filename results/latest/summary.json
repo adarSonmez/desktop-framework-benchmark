@@ -1,0 +1,896 @@
+{
+  "timestamp": "20261107-141147",
+  "machine": "VICTUS / 16 CPUs / Microsoft Windows NT 10.0.26300.0",
+  "runs": 10,
+  "idleMs": 3000,
+  "variants": {
+    "electron": {
+      "validRuns": 10,
+      "coldStartupMs": 725,
+      "size": {
+        "diskBytes": 374476440,
+        "zipBytes": 162519702,
+        "fileCount": 75,
+        "installerBytes": 121340331
+      },
+      "metrics": {
+        "startupMs": {
+          "median": 546.5,
+          "p95": 661.05,
+          "mean": 546.1,
+          "min": 424,
+          "max": 738,
+          "cv": 0.149
+        },
+        "windowMs": {
+          "median": 327.18,
+          "p95": 526.08,
+          "mean": 344.7,
+          "min": 238,
+          "max": 594.9,
+          "cv": 0.32
+        },
+        "idleWorkingSetMb": {
+          "median": 347.58,
+          "p95": 358.12,
+          "mean": 346.67,
+          "min": 333.48,
+          "max": 358.9,
+          "cv": 0.025
+        },
+        "idlePrivateMb": {
+          "median": 220.09,
+          "p95": 223.26,
+          "mean": 220.31,
+          "min": 217.84,
+          "max": 224.32,
+          "cv": 0.008
+        },
+        "peakWorkingSetMb": {
+          "median": 449.5,
+          "p95": 469.16,
+          "mean": 447.56,
+          "min": 422.9,
+          "max": 472.62,
+          "cv": 0.037
+        },
+        "peakPrivateMb": {
+          "median": 320.23,
+          "p95": 332.48,
+          "mean": 320.89,
+          "min": 311.41,
+          "max": 332.95,
+          "cv": 0.022
+        },
+        "cpuMs": {
+          "median": 3585.94,
+          "p95": 4117.19,
+          "mean": 3621.88,
+          "min": 3078.12,
+          "max": 4187.5,
+          "cv": 0.103
+        },
+        "processCount": {
+          "median": 4,
+          "p95": 4,
+          "mean": 4,
+          "min": 4,
+          "max": 4,
+          "cv": 0
+        },
+        "step.load": {
+          "median": 76.7,
+          "p95": 112.94,
+          "mean": 82.12,
+          "min": 55.8,
+          "max": 114.2,
+          "cv": 0.28
+        },
+        "step.filter": {
+          "median": 74.4,
+          "p95": 105.34,
+          "mean": 77.52,
+          "min": 53.3,
+          "max": 108,
+          "cv": 0.218
+        },
+        "step.sort": {
+          "median": 73.05,
+          "p95": 85.52,
+          "mean": 70.27,
+          "min": 55.6,
+          "max": 87.1,
+          "cv": 0.172
+        },
+        "step.scroll": {
+          "median": 864.7,
+          "p95": 928.22,
+          "mean": 875.01,
+          "min": 833.4,
+          "max": 937.4,
+          "cv": 0.037
+        },
+        "step.crud": {
+          "median": 195.2,
+          "p95": 235.98,
+          "mean": 200.88,
+          "min": 173.4,
+          "max": 241.7,
+          "cv": 0.113
+        },
+        "step.save": {
+          "median": 10,
+          "p95": 14.1,
+          "mean": 10.67,
+          "min": 8.2,
+          "max": 15.5,
+          "cv": 0.201
+        },
+        "step.cpuPrimes": {
+          "median": 243.1,
+          "p95": 270.53,
+          "mean": 248.04,
+          "min": 233.7,
+          "max": 273.1,
+          "cv": 0.055
+        },
+        "step.cpuJson": {
+          "median": 54.35,
+          "p95": 81.77,
+          "mean": 59.35,
+          "min": 47.5,
+          "max": 86,
+          "cv": 0.21
+        },
+        "step.ipc": {
+          "median": 145.15,
+          "p95": 161.51,
+          "mean": 141.81,
+          "min": 115,
+          "max": 164.3,
+          "cv": 0.111
+        }
+      }
+    },
+    "tauri": {
+      "validRuns": 10,
+      "coldStartupMs": 1162,
+      "size": {
+        "diskBytes": 4275200,
+        "zipBytes": 1723800,
+        "fileCount": 1,
+        "installerBytes": 1377245
+      },
+      "metrics": {
+        "startupMs": {
+          "median": 613.5,
+          "p95": 851.2,
+          "mean": 633.1,
+          "min": 482,
+          "max": 1015,
+          "cv": 0.226
+        },
+        "windowMs": {
+          "median": 44.84,
+          "p95": 389.3,
+          "mean": 120.11,
+          "min": 31.21,
+          "max": 541.29,
+          "cv": 1.333
+        },
+        "idleWorkingSetMb": {
+          "median": 407.19,
+          "p95": 428.55,
+          "mean": 409.91,
+          "min": 396.34,
+          "max": 431.67,
+          "cv": 0.026
+        },
+        "idlePrivateMb": {
+          "median": 212.34,
+          "p95": 214.54,
+          "mean": 212.66,
+          "min": 211.45,
+          "max": 215.32,
+          "cv": 0.005
+        },
+        "peakWorkingSetMb": {
+          "median": 515.26,
+          "p95": 530.38,
+          "mean": 517.76,
+          "min": 509.82,
+          "max": 534.09,
+          "cv": 0.015
+        },
+        "peakPrivateMb": {
+          "median": 308,
+          "p95": 315.25,
+          "mean": 309.09,
+          "min": 304.13,
+          "max": 315.95,
+          "cv": 0.014
+        },
+        "cpuMs": {
+          "median": 6531.25,
+          "p95": 7159.38,
+          "mean": 6628.12,
+          "min": 6218.75,
+          "max": 7187.5,
+          "cv": 0.048
+        },
+        "processCount": {
+          "median": 7,
+          "p95": 7,
+          "mean": 7,
+          "min": 7,
+          "max": 7,
+          "cv": 0
+        },
+        "step.load": {
+          "median": 50.05,
+          "p95": 63.92,
+          "mean": 50.77,
+          "min": 34,
+          "max": 68.2,
+          "cv": 0.172
+        },
+        "step.filter": {
+          "median": 62.15,
+          "p95": 70.61,
+          "mean": 58.66,
+          "min": 46.5,
+          "max": 71.6,
+          "cv": 0.163
+        },
+        "step.sort": {
+          "median": 75.95,
+          "p95": 84.07,
+          "mean": 72.88,
+          "min": 55.5,
+          "max": 84.7,
+          "cv": 0.157
+        },
+        "step.scroll": {
+          "median": 851.75,
+          "p95": 881.17,
+          "mean": 853.48,
+          "min": 833.1,
+          "max": 882.7,
+          "cv": 0.019
+        },
+        "step.crud": {
+          "median": 190.85,
+          "p95": 229.81,
+          "mean": 197.71,
+          "min": 177.1,
+          "max": 236.2,
+          "cv": 0.1
+        },
+        "step.save": {
+          "median": 50.55,
+          "p95": 59.08,
+          "mean": 51.34,
+          "min": 40,
+          "max": 60.3,
+          "cv": 0.125
+        },
+        "step.cpuPrimes": {
+          "median": 247.8,
+          "p95": 293.8,
+          "mean": 255.32,
+          "min": 231.2,
+          "max": 306.9,
+          "cv": 0.092
+        },
+        "step.cpuJson": {
+          "median": 59.3,
+          "p95": 79.56,
+          "mean": 63.76,
+          "min": 55.3,
+          "max": 80.6,
+          "cv": 0.143
+        },
+        "step.ipc": {
+          "median": 1629.15,
+          "p95": 1837.12,
+          "mean": 1645.3,
+          "min": 1499.4,
+          "max": 1850.4,
+          "cv": 0.074
+        }
+      }
+    },
+    "flutter": {
+      "validRuns": 10,
+      "coldStartupMs": 3067,
+      "size": {
+        "diskBytes": 27741332,
+        "zipBytes": 11788882,
+        "fileCount": 12,
+        "installerBytes": null
+      },
+      "metrics": {
+        "startupMs": {
+          "median": 2336.5,
+          "p95": 2592,
+          "mean": 2389,
+          "min": 2185,
+          "max": 2637,
+          "cv": 0.063
+        },
+        "windowMs": {
+          "median": 2382.08,
+          "p95": 2590.57,
+          "mean": 2387.86,
+          "min": 2165.92,
+          "max": 2594.62,
+          "cv": 0.068
+        },
+        "idleWorkingSetMb": {
+          "median": 196.96,
+          "p95": 204.37,
+          "mean": 198.65,
+          "min": 195.8,
+          "max": 205.8,
+          "cv": 0.016
+        },
+        "idlePrivateMb": {
+          "median": 207.21,
+          "p95": 208.24,
+          "mean": 206.94,
+          "min": 203.93,
+          "max": 208.25,
+          "cv": 0.007
+        },
+        "peakWorkingSetMb": {
+          "median": 218.46,
+          "p95": 233.04,
+          "mean": 221.68,
+          "min": 217.87,
+          "max": 234.17,
+          "cv": 0.028
+        },
+        "peakPrivateMb": {
+          "median": 228.98,
+          "p95": 233.85,
+          "mean": 229.31,
+          "min": 224.5,
+          "max": 234.6,
+          "cv": 0.013
+        },
+        "cpuMs": {
+          "median": 6531.25,
+          "p95": 7400.78,
+          "mean": 6698.44,
+          "min": 6203.12,
+          "max": 7421.88,
+          "cv": 0.066
+        },
+        "processCount": {
+          "median": 1,
+          "p95": 1,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "cv": 0
+        },
+        "step.load": {
+          "median": 125.61,
+          "p95": 178.5,
+          "mean": 130.68,
+          "min": 104.55,
+          "max": 212.78,
+          "cv": 0.235
+        },
+        "step.filter": {
+          "median": 132.2,
+          "p95": 184.42,
+          "mean": 141.59,
+          "min": 124.42,
+          "max": 188.57,
+          "cv": 0.16
+        },
+        "step.sort": {
+          "median": 143.04,
+          "p95": 206.68,
+          "mean": 155.72,
+          "min": 136.2,
+          "max": 211.7,
+          "cv": 0.176
+        },
+        "step.scroll": {
+          "median": 2354.2,
+          "p95": 3016.2,
+          "mean": 2424.48,
+          "min": 2022.11,
+          "max": 3083.8,
+          "cv": 0.135
+        },
+        "step.crud": {
+          "median": 213,
+          "p95": 253.61,
+          "mean": 216.68,
+          "min": 184.91,
+          "max": 254.44,
+          "cv": 0.12
+        },
+        "step.save": {
+          "median": 40.28,
+          "p95": 48.06,
+          "mean": 39.52,
+          "min": 30.91,
+          "max": 51.36,
+          "cv": 0.157
+        },
+        "step.cpuPrimes": {
+          "median": 254.75,
+          "p95": 264.96,
+          "mean": 254.69,
+          "min": 243.73,
+          "max": 270.26,
+          "cv": 0.028
+        },
+        "step.cpuJson": {
+          "median": 413.86,
+          "p95": 456.26,
+          "mean": 416.56,
+          "min": 367.07,
+          "max": 474.43,
+          "cv": 0.069
+        },
+        "step.ipc": {
+          "median": 62.89,
+          "p95": 83.4,
+          "mean": 65.22,
+          "min": 48.53,
+          "max": 88.98,
+          "cv": 0.186
+        }
+      }
+    },
+    "react-native": {
+      "validRuns": 10,
+      "coldStartupMs": 502,
+      "size": {
+        "diskBytes": 216894680,
+        "zipBytes": 75586338,
+        "fileCount": 301,
+        "installerBytes": null
+      },
+      "metrics": {
+        "startupMs": {
+          "median": 458,
+          "p95": 541,
+          "mean": 464.4,
+          "min": 367,
+          "max": 559,
+          "cv": 0.111
+        },
+        "windowMs": {
+          "median": 208.22,
+          "p95": 234.94,
+          "mean": 206.6,
+          "min": 166.04,
+          "max": 235.97,
+          "cv": 0.117
+        },
+        "idleWorkingSetMb": {
+          "median": 142.5,
+          "p95": 152.89,
+          "mean": 144.78,
+          "min": 141.98,
+          "max": 153.85,
+          "cv": 0.03
+        },
+        "idlePrivateMb": {
+          "median": 132.69,
+          "p95": 133.19,
+          "mean": 132.62,
+          "min": 131.97,
+          "max": 133.35,
+          "cv": 0.003
+        },
+        "peakWorkingSetMb": {
+          "median": 208.12,
+          "p95": 215.85,
+          "mean": 208.37,
+          "min": 199.99,
+          "max": 216.44,
+          "cv": 0.027
+        },
+        "peakPrivateMb": {
+          "median": 196.06,
+          "p95": 201.28,
+          "mean": 197.06,
+          "min": 191.9,
+          "max": 201.98,
+          "cv": 0.016
+        },
+        "cpuMs": {
+          "median": 5773.44,
+          "p95": 6573.44,
+          "mean": 5876.56,
+          "min": 5265.62,
+          "max": 6812.5,
+          "cv": 0.079
+        },
+        "processCount": {
+          "median": 1,
+          "p95": 1,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "cv": 0
+        },
+        "step.load": {
+          "median": 139.82,
+          "p95": 166.72,
+          "mean": 143.53,
+          "min": 114,
+          "max": 170.92,
+          "cv": 0.11
+        },
+        "step.filter": {
+          "median": 632.58,
+          "p95": 796.68,
+          "mean": 639.54,
+          "min": 498.42,
+          "max": 807.07,
+          "cv": 0.172
+        },
+        "step.sort": {
+          "median": 746.86,
+          "p95": 919.28,
+          "mean": 760.03,
+          "min": 591.25,
+          "max": 980.92,
+          "cv": 0.134
+        },
+        "step.scroll": {
+          "median": 8.58,
+          "p95": 230.43,
+          "mean": 52.1,
+          "min": 7.89,
+          "max": 280.41,
+          "cv": 1.819
+        },
+        "step.crud": {
+          "median": 1259.92,
+          "p95": 1436.99,
+          "mean": 1286.46,
+          "min": 1187.38,
+          "max": 1488.49,
+          "cv": 0.069
+        },
+        "step.save": {
+          "median": 29.34,
+          "p95": 65.25,
+          "mean": 37.6,
+          "min": 17.79,
+          "max": 69,
+          "cv": 0.485
+        },
+        "step.cpuPrimes": {
+          "median": 1577.53,
+          "p95": 1633.96,
+          "mean": 1574.94,
+          "min": 1513.58,
+          "max": 1654.05,
+          "cv": 0.027
+        },
+        "step.cpuJson": {
+          "median": 188.05,
+          "p95": 264.39,
+          "mean": 201.51,
+          "min": 169.74,
+          "max": 294.82,
+          "cv": 0.186
+        },
+        "step.ipc": {
+          "median": 17.19,
+          "p95": 20,
+          "mean": 17.43,
+          "min": 14.77,
+          "max": 20.79,
+          "cv": 0.108
+        }
+      }
+    },
+    "maui-xaml": {
+      "validRuns": 10,
+      "coldStartupMs": 3005,
+      "size": {
+        "diskBytes": 286171478,
+        "zipBytes": 110529669,
+        "fileCount": 616,
+        "installerBytes": null
+      },
+      "metrics": {
+        "startupMs": {
+          "median": 1618,
+          "p95": 1815.45,
+          "mean": 1638.6,
+          "min": 1433,
+          "max": 1914,
+          "cv": 0.074
+        },
+        "windowMs": {
+          "median": 919.57,
+          "p95": 1057.24,
+          "mean": 947.76,
+          "min": 793.01,
+          "max": 1066.29,
+          "cv": 0.091
+        },
+        "idleWorkingSetMb": {
+          "median": 267.45,
+          "p95": 277.38,
+          "mean": 268.23,
+          "min": 261.76,
+          "max": 278.24,
+          "cv": 0.021
+        },
+        "idlePrivateMb": {
+          "median": 209.26,
+          "p95": 210.62,
+          "mean": 209.13,
+          "min": 206.99,
+          "max": 210.69,
+          "cv": 0.006
+        },
+        "peakWorkingSetMb": {
+          "median": 359.92,
+          "p95": 387.42,
+          "mean": 363.03,
+          "min": 341.94,
+          "max": 392.96,
+          "cv": 0.04
+        },
+        "peakPrivateMb": {
+          "median": 307.33,
+          "p95": 326.37,
+          "mean": 308.91,
+          "min": 290.77,
+          "max": 329.42,
+          "cv": 0.041
+        },
+        "cpuMs": {
+          "median": 20484.38,
+          "p95": 22111.72,
+          "mean": 20609.38,
+          "min": 19453.12,
+          "max": 22625,
+          "cv": 0.047
+        },
+        "processCount": {
+          "median": 1,
+          "p95": 1,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "cv": 0
+        },
+        "step.load": {
+          "median": 501.76,
+          "p95": 583.33,
+          "mean": 504.11,
+          "min": 429.78,
+          "max": 628.5,
+          "cv": 0.103
+        },
+        "step.filter": {
+          "median": 1426.34,
+          "p95": 1550.87,
+          "mean": 1399.8,
+          "min": 1214.47,
+          "max": 1567.65,
+          "cv": 0.089
+        },
+        "step.sort": {
+          "median": 1343.95,
+          "p95": 1466.97,
+          "mean": 1314.5,
+          "min": 1123.03,
+          "max": 1479.83,
+          "cv": 0.099
+        },
+        "step.scroll": {
+          "median": 4791.11,
+          "p95": 5630.25,
+          "mean": 5025.26,
+          "min": 4625.08,
+          "max": 5663.61,
+          "cv": 0.085
+        },
+        "step.crud": {
+          "median": 852.89,
+          "p95": 929.82,
+          "mean": 846.42,
+          "min": 716.65,
+          "max": 931.85,
+          "cv": 0.09
+        },
+        "step.save": {
+          "median": 46.92,
+          "p95": 99.07,
+          "mean": 54.63,
+          "min": 30.85,
+          "max": 124.27,
+          "cv": 0.493
+        },
+        "step.cpuPrimes": {
+          "median": 224.59,
+          "p95": 227.42,
+          "mean": 225.1,
+          "min": 223.64,
+          "max": 228.6,
+          "cv": 0.006
+        },
+        "step.cpuJson": {
+          "median": 492.78,
+          "p95": 582.16,
+          "mean": 498.31,
+          "min": 431.77,
+          "max": 606.95,
+          "cv": 0.115
+        },
+        "step.ipc": {
+          "median": 0.65,
+          "p95": 0.89,
+          "mean": 0.69,
+          "min": 0.54,
+          "max": 0.94,
+          "cv": 0.194
+        }
+      }
+    },
+    "maui-blazor": {
+      "validRuns": 10,
+      "coldStartupMs": 5030,
+      "size": {
+        "diskBytes": 299656126,
+        "zipBytes": 112517863,
+        "fileCount": 794,
+        "installerBytes": null
+      },
+      "metrics": {
+        "startupMs": {
+          "median": 1366,
+          "p95": 1452.45,
+          "mean": 1371.3,
+          "min": 1232,
+          "max": 1461,
+          "cv": 0.045
+        },
+        "windowMs": {
+          "median": 807.81,
+          "p95": 926.57,
+          "mean": 830.32,
+          "min": 733.98,
+          "max": 928.17,
+          "cv": 0.087
+        },
+        "idleWorkingSetMb": {
+          "median": 603.35,
+          "p95": 615.82,
+          "mean": 603,
+          "min": 588.08,
+          "max": 615.94,
+          "cv": 0.015
+        },
+        "idlePrivateMb": {
+          "median": 343.41,
+          "p95": 344.93,
+          "mean": 343.44,
+          "min": 341.85,
+          "max": 345.44,
+          "cv": 0.003
+        },
+        "peakWorkingSetMb": {
+          "median": 784.38,
+          "p95": 800.32,
+          "mean": 784.52,
+          "min": 766.66,
+          "max": 800.88,
+          "cv": 0.014
+        },
+        "peakPrivateMb": {
+          "median": 517.22,
+          "p95": 525.38,
+          "mean": 517.74,
+          "min": 510.43,
+          "max": 525.44,
+          "cv": 0.011
+        },
+        "cpuMs": {
+          "median": 11835.94,
+          "p95": 12913.28,
+          "mean": 12000,
+          "min": 11343.75,
+          "max": 13328.12,
+          "cv": 0.047
+        },
+        "processCount": {
+          "median": 7,
+          "p95": 7,
+          "mean": 7,
+          "min": 7,
+          "max": 7,
+          "cv": 0
+        },
+        "step.load": {
+          "median": 73.05,
+          "p95": 86.66,
+          "mean": 75.7,
+          "min": 70.99,
+          "max": 94.03,
+          "cv": 0.091
+        },
+        "step.filter": {
+          "median": 120.62,
+          "p95": 134.67,
+          "mean": 115.82,
+          "min": 84.69,
+          "max": 137.03,
+          "cv": 0.145
+        },
+        "step.sort": {
+          "median": 148.25,
+          "p95": 176.68,
+          "mean": 147.78,
+          "min": 103.55,
+          "max": 176.74,
+          "cv": 0.142
+        },
+        "step.scroll": {
+          "median": 1132.02,
+          "p95": 1221.59,
+          "mean": 1138.44,
+          "min": 1085.31,
+          "max": 1265.21,
+          "cv": 0.045
+        },
+        "step.crud": {
+          "median": 2956.57,
+          "p95": 3334.98,
+          "mean": 3006.8,
+          "min": 2795.25,
+          "max": 3379.96,
+          "cv": 0.063
+        },
+        "step.save": {
+          "median": 25.37,
+          "p95": 28.44,
+          "mean": 24.87,
+          "min": 20,
+          "max": 29.38,
+          "cv": 0.118
+        },
+        "step.cpuPrimes": {
+          "median": 230.33,
+          "p95": 242.96,
+          "mean": 231.22,
+          "min": 223.7,
+          "max": 244.83,
+          "cv": 0.029
+        },
+        "step.cpuJson": {
+          "median": 320.8,
+          "p95": 342.73,
+          "mean": 315.24,
+          "min": 258.72,
+          "max": 345.62,
+          "cv": 0.082
+        },
+        "step.ipc": {
+          "median": 290.52,
+          "p95": 332.43,
+          "mean": 295.39,
+          "min": 253.8,
+          "max": 340.63,
+          "cv": 0.087
+        }
+      }
+    }
+  }
+}

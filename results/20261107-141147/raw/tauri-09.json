@@ -1,0 +1,25 @@
+{
+  "variant": "tauri",
+  "run": 9,
+  "valid": true,
+  "error": null,
+  "startupMs": 527,
+  "windowMs": 43.8669,
+  "idleWorkingSetMb": 407.1799879807692,
+  "idlePrivateMb": 213.30919471153845,
+  "peakWorkingSetMb": 509.82421875,
+  "peakPrivateMb": 307.25390625,
+  "cpuMs": 6437.5,
+  "processCount": 7,
+  "steps": {
+    "load": 34,
+    "filter": 63.4,
+    "sort": 69.5,
+    "scroll": 882.7,
+    "crud": 222,
+    "save": 40,
+    "cpuPrimes": 248,
+    "cpuJson": 56.6,
+    "ipc": 1499.4
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "variant": "flutter",
+  "run": 6,
+  "valid": true,
+  "error": null,
+  "startupMs": 2327,
+  "windowMs": 2255.2899,
+  "idleWorkingSetMb": 196.97265625,
+  "idlePrivateMb": 206.40625,
+  "peakWorkingSetMb": 218.3125,
+  "peakPrivateMb": 227.0625,
+  "cpuMs": 6203.125,
+  "processCount": 1,
+  "steps": {
+    "load": 136.611,
+    "filter": 132.194,
+    "sort": 149.155,
+    "scroll": 2338.693,
+    "crud": 214.819,
+    "save": 51.36,
+    "cpuPrimes": 246.836,
+    "cpuJson": 392.552,
+    "ipc": 49.3
+  }
+}

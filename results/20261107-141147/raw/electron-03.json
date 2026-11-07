@@ -1,0 +1,25 @@
+{
+  "variant": "electron",
+  "run": 3,
+  "valid": true,
+  "error": null,
+  "startupMs": 551,
+  "windowMs": 259.2015,
+  "idleWorkingSetMb": 357.171875,
+  "idlePrivateMb": 220.40865384615384,
+  "peakWorkingSetMb": 472.6171875,
+  "peakPrivateMb": 332.94921875,
+  "cpuMs": 3578.125,
+  "processCount": 4,
+  "steps": {
+    "load": 67.6,
+    "filter": 82.3,
+    "sort": 56.2,
+    "scroll": 860.6,
+    "crud": 241.7,
+    "save": 12.4,
+    "cpuPrimes": 258.7,
+    "cpuJson": 50.1,
+    "ipc": 142.9
+  }
+}
