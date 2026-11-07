@@ -1,0 +1,29 @@
+{
+  "name": "desktopbench-electron",
+  "private": true,
+  "version": "1.0.0",
+  "description": "DesktopBench Electron variant",
+  "main": "main.cjs",
+  "scripts": {
+    "dev": "vite build && electron .",
+    "build": "vite build && electron-builder --win nsis --x64",
+    "start": "electron ."
+  },
+  "build": {
+    "appId": "dev.desktopbench.electron",
+    "electronDist": "node_modules/electron/dist",
+    "productName": "DesktopBench Electron",
+    "directories": { "output": "../../../desktopbench-out/electron" },
+    "files": ["main.cjs", "preload.cjs", "dist/**"],
+    "asar": true,
+    "win": { "target": "nsis" }
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "*",
+    "electron": "^45.2.3",
+    "electron-builder": "*",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "vite": "^8.3.6"
+  }
+}
