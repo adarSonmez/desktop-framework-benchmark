@@ -1,0 +1,46 @@
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --border: #e3e6ea;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --selected: #dbeafe;
+  --danger: #dc2626;
+}
+* { box-sizing: border-box; }
+html, body, #root { margin: 0; height: 100%; }
+body { font: 14px "Segoe UI", sans-serif; color: var(--text); background: var(--bg); overflow: hidden; }
+.app { display: flex; flex-direction: column; height: 100%; }
+
+.topbar { height: 56px; flex: none; display: flex; align-items: center; gap: 12px; padding: 0 16px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.title { font-size: 16px; font-weight: 600; margin-right: 8px; }
+.search { width: 280px; height: 32px; padding: 0 8px; border: 1px solid var(--border); border-radius: 4px; font: inherit; }
+.sort { height: 32px; border: 1px solid var(--border); border-radius: 4px; font: inherit; padding: 0 6px; }
+.stats { margin-left: auto; color: var(--muted); }
+.btn { height: 32px; padding: 0 16px; border: none; border-radius: 4px; font: inherit; cursor: pointer; color: #fff; }
+.btn.primary { background: var(--accent); }
+.btn.danger { background: var(--danger); }
+
+.body { flex: 1; display: flex; min-height: 0; }
+.list { flex: 1; display: flex; flex-direction: column; min-width: 0; background: var(--surface); }
+.viewport { flex: 1; overflow-y: auto; position: relative; }
+.spacer { position: relative; }
+.row { position: absolute; left: 0; right: 0; top: 0; height: 32px; display: flex; align-items: center; padding: 0 12px; border-bottom: 1px solid var(--border); cursor: default; white-space: nowrap; }
+.row.head { position: static; flex: none; color: var(--muted); font-weight: 600; }
+.row.selected { background: var(--selected); }
+.row span { overflow: hidden; text-overflow: ellipsis; }
+.c-id { width: 70px; flex: none; }
+.c-name { flex: 1; min-width: 0; }
+.c-cat { width: 130px; flex: none; }
+.c-price { width: 100px; flex: none; text-align: right; }
+.c-stock { width: 80px; flex: none; text-align: right; }
+.c-date { width: 110px; flex: none; padding-left: 16px; }
+
+.detail { width: 360px; flex: none; padding: 16px; border-left: 1px solid var(--border); background: var(--surface); display: flex; flex-direction: column; gap: 12px; }
+.detail h2 { font-size: 16px; font-weight: 600; margin: 0 0 4px; }
+.detail label { display: flex; flex-direction: column; gap: 4px; color: var(--muted); }
+.detail input, .detail select { height: 32px; padding: 0 8px; border: 1px solid var(--border); border-radius: 4px; font: inherit; color: var(--text); }
+.actions { display: flex; gap: 8px; }
+
+.statusbar { height: 28px; flex: none; display: flex; align-items: center; padding: 0 16px; background: var(--surface); border-top: 1px solid var(--border); color: var(--muted); font-size: 12px; }

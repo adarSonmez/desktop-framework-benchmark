@@ -1,0 +1,15 @@
+{
+  "name": "@desktopbench/web-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Shared React UI used by Electron and Tauri variants. Source-only; each shell bundles it via a Vite alias.",
+  "scripts": { "typecheck": "tsc --noEmit" },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}
